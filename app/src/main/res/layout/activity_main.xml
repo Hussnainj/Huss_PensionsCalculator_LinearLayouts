@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.wasim.pensionscalculator.MainActivity"
+    android:background="#f0e7ff">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pension Calculator"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/pensionTitle"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.64"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Pension Type"
+                    android:textStyle="bold"
+                    android:id="@+id/typetv"
+                    android:layout_below="@+id/pensionTitle"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="38dp" />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/typespinner"
+                    android:entries="@array/pension_type"
+                    android:layout_weight="0.42"
+                    android:layout_alignBottom="@+id/linearLayout"
+                    android:layout_marginTop="36dp"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout1"
+                android:layout_marginTop="123dp"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="54dp"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Pay Scale and Pay"
+                    android:id="@+id/paytv"
+                    android:layout_below="@+id/typetv"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+
+                    android:layout_marginTop="04dp"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="18dp"
+                    android:id="@+id/payspinner"
+                    android:layout_alignBottom="@+id/paytv"
+                    android:layout_toRightOf="@+id/paytv"
+                    android:layout_toEndOf="@+id/paytv"
+                    android:textAlignment="textEnd"
+                    android:entries="@array/pay_scale"
+                    android:layout_marginTop="14dp"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:id="@+id/payet"
+                    android:layout_alignBottom="@+id/payspinner"
+                    android:layout_toRightOf="@+id/payspinner"
+                    android:layout_toEndOf="@+id/payspinner"
+                    android:hint=" Type Pay"
+                    android:textColor="#46c108"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout2"
+                android:layout_marginTop="200dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Non Qualify Service"
+                    android:id="@+id/servicetv"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/serviceyear"
+                    android:layout_alignBottom="@+id/servicetv"
+                    android:layout_alignLeft="@+id/payspinner"
+                    android:layout_alignStart="@+id/payspinner"
+                    android:entries="@array/service_year"
+
+                    android:textAlignment="textEnd" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/servicemonth"
+                    android:layout_alignTop="@+id/serviceyear"
+                    android:layout_toRightOf="@+id/serviceyear"
+                    android:layout_toEndOf="@+id/serviceyear"
+                    android:entries="@array/service_month"
+                    android:layout_marginLeft="1dp"
+                    android:textAlignment="textEnd" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/serviceday"
+                    android:layout_alignTop="@+id/servicemonth"
+                    android:layout_toRightOf="@+id/servicemonth"
+                    android:layout_toEndOf="@+id/servicemonth"
+                    android:entries="@array/service_days"
+                    android:textAlignment="textEnd" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="164dp"
+                android:id="@+id/linearLayout3"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Retirement"
+                    android:id="@+id/retiretv"
+                    android:textStyle="bold"
+                    android:textSize="13sp"/>
+                <EditText
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/retirementet"
+                    android:hint="Select date"
+                    android:textColor="#0f27e2"
+                    android:focusable="false"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="226dp"
+                android:id="@+id/linearLayout4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Appointment"
+                    android:textStyle="bold"
+                    android:id="@+id/appointmenttv"
+                    android:textSize="13sp"/>
+                <EditText
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/appointmentet"
+                    android:hint="Select date"
+                    android:textColor="#FF0F27E2"
+                    android:focusable="false"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="280dp"
+                android:id="@+id/linearLayout5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="25dp"
+                    android:text="Birth"
+                    android:id="@+id/birthtv"
+                    android:textStyle="bold"
+                    android:textSize="13sp"/>
+                <EditText
+
+                    android:layout_height="39dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/birthet"
+                    android:hint="Select date"
+                    android:textColor="#FF0F27E2"
+
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="330dp"
+                android:id="@+id/linearLayout6">
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="View Record"
+                android:id="@+id/calc"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:background="#3224ff"
+                android:textColor="#ffffff"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="viewCalculation"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:id="@+id/reset"
+                android:background="#e3f40e0e"
+                android:textColor="#ffffff"
+                android:layout_alignTop="@+id/calc"
+                android:layout_toRightOf="@+id/calc"
+                android:layout_toEndOf="@+id/calc"
+                android:layout_marginLeft="35dp"
+                android:layout_marginStart="35dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
